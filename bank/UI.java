@@ -17,7 +17,7 @@ public class UI {
             System.out.println("\n      *----* Menu *----*");
             System.out.println("      1.Open New Account");
             System.out.println("      2.Account Details!!");
-            System.out.println("      3.Check Balance ");
+            System.out.println("      3.Check Bank Balance ");
             System.out.println("      4.Withdraw Balance ");
             System.out.println("      5.Deposit Balance ");
             System.out.println("      6.Change Mobile Number ");
