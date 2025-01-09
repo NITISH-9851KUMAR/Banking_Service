@@ -101,6 +101,23 @@ public class AccountOpen extends UI {
             int rowAffect=statement.executeUpdate(query);
             //If query is successfully execute then show account details
             if(rowAffect>0){
+
+                // Add a delay of 3 second
+                System.out.print("\nOpening an Account");
+                for(int i=0;i<4; i++){
+                    try{
+                        Thread.sleep(1000);
+                    }catch(Exception e){
+                        System.out.println(e.getMessage());
+                    }
+                    if(i==3) {
+                        System.out.print("\n");
+                        break;
+                    }
+                    else
+                        System.out.print(".");
+                }
+
                 System.out.println();
                 System.out.println("Account Opened Successfully!!");
                 System.out.println("*-----*  Account Details  *-----*\n");
