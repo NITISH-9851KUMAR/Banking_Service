@@ -26,7 +26,6 @@ class AccountDetails extends UI{
             System.out.print("Enter Account Number: ");
             String accNumber = sc.next();
 
-
             int accNumberLength=accNumber.length();
             //Account number should be 15 digits
             while(accNumberLength!=15){
@@ -53,7 +52,6 @@ class AccountDetails extends UI{
                     System.out.print(".");
             }
 
-
             //Check account number is valid ,show in our database
             query=String.format("SELECT acc_number FROM account_details WHERE acc_number='%s'",accNumber);
             resultSet=statement.executeQuery(query);
@@ -62,7 +60,6 @@ class AccountDetails extends UI{
                 connection.close();
                 return;
             }
-
 
             //Taking freeze feedback from account details
             query=String.format("SELECT freeze_info FROM account_details WHERE acc_number='%s'",accNumber);
