@@ -6,8 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
-class AccountDetails extends UI {
-    public AccountDetails(){
+class AccountDetails extends UI{
+
+    public AccountDetails (){
         try{
             Class.forName("oracle.jdbc.driver.OracleDriver");
         }catch(Exception e){
@@ -24,6 +25,8 @@ class AccountDetails extends UI {
             //Take input Account Number form user
             System.out.print("Enter Account Number: ");
             String accNumber = sc.next();
+
+
             int accNumberLength=accNumber.length();
             //Account number should be 15 digits
             while(accNumberLength!=15){
@@ -31,6 +34,23 @@ class AccountDetails extends UI {
                 System.out.print("\nRe-Enter Account Number: ");
                 accNumber=sc.next();
                 accNumberLength=accNumber.length();
+            }
+
+            // Add a delay of 3 second
+            System.out.print("Fetching Account Details");
+            for(int i=0;i<4; i++){
+                try{
+                    Thread.sleep(1000);
+                }catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
+
+                if(i==3) {
+                    System.out.print("\n");
+                    break;
+                }
+                else
+                    System.out.print(".");
             }
 
 
