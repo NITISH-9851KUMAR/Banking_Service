@@ -1,7 +1,7 @@
 package Banking_Service.table;
 
 import java.sql.*;
-import Internship.oracle_Bank_System.bank.UI;
+import Banking_Service.bank.UI;
 public class PrnDetails extends UI{
     public static void main(String[] args) {
         try{
