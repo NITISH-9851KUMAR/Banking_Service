@@ -31,6 +31,23 @@ class BalanceCheck extends UI {
                     accNumberLength=accNumber.length();
                 }
 
+                // Add a delay of 3 second
+                System.out.print("Fetching Bank Balance");
+                for(int i=0;i<4; i++){
+                    try{
+                        Thread.sleep(1000);
+                    }catch(Exception e){
+                        System.out.println(e.getMessage());
+                    }
+
+                    if(i==3) {
+                        System.out.print("\n\n");
+                        break;
+                    }
+                    else
+                        System.out.print(".");
+                }
+
                 //Check account number is valid ,show in our database
                 query=String.format("SELECT acc_number FROM account_details WHERE acc_number='%S'",accNumber);
                 resultSet=statement.executeQuery(query);
