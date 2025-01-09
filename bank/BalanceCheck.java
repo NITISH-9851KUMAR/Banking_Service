@@ -39,7 +39,6 @@ class BalanceCheck extends UI {
                     }catch(Exception e){
                         System.out.println(e.getMessage());
                     }
-
                     if(i==3) {
                         System.out.print("\n\n");
                         break;
