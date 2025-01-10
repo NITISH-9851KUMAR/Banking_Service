@@ -21,7 +21,7 @@ public class Atm extends UI {
                     "mob_number VARCHAR(10),"+
                     "atm_number VARCHAR(16),"+
                     "m_pin VARCHAR(4) DEFAULT'0000',"+
-                    "freeze_details VARCHAR(3) DEFAULT 'no',"+
+                    "block_info VARCHAR(3) DEFAULT 'no',"+
                     "date_time VARCHAR(20))";
 
             //account number is foreign key REFERENCES to account_details acc_number
