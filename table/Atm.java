@@ -16,7 +16,7 @@ public class Atm extends UI {
             Connection connection=DriverManager.getConnection(url,userName,password);
             Statement statement=connection.createStatement();
             String query="CREATE TABLE atm_details("+
-                    "sr_no NUMBER(3),"+
+                    "sr_no NUMBER(3) DEFAULT '17',"+
                     "acc_number VARCHAR(15),"+
                     "mob_number VARCHAR(10),"+
                     "atm_number VARCHAR(16),"+
