@@ -16,7 +16,7 @@ public class Account extends UI {
             Connection connection=DriverManager.getConnection(url,userName,password);
             Statement statement=connection.createStatement();
             String query="CREATE TABLE account_details("+
-                    "sr_no NUMBER(3),"+
+                    "sr_no NUMBER(3) DEFAULT '17',"+
                     "first_name VARCHAR(20),"+
                     "last_name VARCHAR(20),"+
                     "acc_balance FLOAT(10),"+
