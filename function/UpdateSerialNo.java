@@ -20,34 +20,34 @@ public class UpdateSerialNo extends UI {
                 String query;
                 ResultSet resultSet;
 
-                //Update Serial Number of account_balance Table
-
                 //Query count Serial Number
-
                 query = String.format("SELECT count(sr_no) FROM %s",tableName);
                 resultSet = statement.executeQuery(query);
-                int countSrNumber = 0;
+                int countSrNumber = 0; //store how many serial number in account_details
                 if (resultSet.next()) {
                     countSrNumber = resultSet.getInt("count(sr_no)");
                 }
-                //Query For Store serial Number in array
-                query =String.format("SELECT * FROM %s",tableName);
+
+                //Store prn number in prn array;
+                String accNumArr[]=new String[countSrNumber];
+                query = String.format("SELECT * FROM %s",tableName);
                 resultSet = statement.executeQuery(query);
-                int i = 0;
-                int storeSrNumber[] = new int[countSrNumber];
-                while (resultSet.next()) {
-                    storeSrNumber[i] = resultSet.getInt("sr_no");
+                int i=0;
+                while(resultSet.next()) {
+                    accNumArr[i] = resultSet.getString("acc_number");
                     i++;
                 }
+
                 //Query for update Serial Number
-                for (i = 1; i <= countSrNumber; i++) {
-                    query = String.format("UPDATE %s SET sr_no=%d WHERE sr_no=%d",tableName, i, storeSrNumber[i - 1]);
+                for (i = 0; i <countSrNumber; i++) {
+                    query=String.format("UPDATE %s SET sr_no=%d WHERE acc_number='%s'",tableName,(i+1),accNumArr[i]);
                     statement.addBatch(query);
                 }
                 statement.executeBatch();
                 connection.close(); //close connection
+
             } catch (Exception e) {
-                e.getMessage();
+                e.printStackTrace();
             }
         }
 }
