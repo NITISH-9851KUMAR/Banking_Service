@@ -115,6 +115,23 @@ public class CreatePin extends UI {
             }
 
             if(pin1.equals(pin2)){
+
+                // Add a delay of 3 second
+                System.out.print("\nCreating M-Pin");
+                for(int i=0;i<4; i++){
+                    try{
+                        Thread.sleep(1000);
+                    }catch(Exception e){
+                        System.out.println(e.getMessage());
+                    }
+                    if(i==3) {
+                        System.out.print("\n");
+                        break;
+                    }
+                    else
+                        System.out.print(".");
+                }
+
                 //Query for Create New M-PIN
                 query=String.format("UPDATE atm_details SET m_pin='%s' WHERE atm_number='%s'",pin1,atmNumber);
                 int row=statement.executeUpdate(query);
