@@ -92,6 +92,23 @@ public class BalanceCheck extends UI {
             String query1=String.format("SELECT acc_balance FROM account_details WHERE acc_number='%s'",accNumber);
             resultSet=statement.executeQuery(query1);
             while(resultSet.next()){
+
+                //add  delay of 3 second
+                System.out.print("Fetching Bank Balance");
+                for(int i=0;i<4; i++){
+                    try{
+                        Thread.sleep(1000);
+                    }catch(Exception e){
+                        System.out.println(e.getMessage());
+                    }
+                    if(i==3) {
+                        System.out.print("\n\n");
+                        break;
+                    }
+                    else
+                        System.out.print(".");
+                }
+
                 double balance=resultSet.getDouble("acc_balance");
                 System.out.println("Available Balance  : "+balance+"₹");
             }
