@@ -74,7 +74,7 @@ class AccountDelete extends UI {
             }
             else
             {
-                System.out.println("Denied Account Details!");
+                System.out.println("Denied Account Delete!");
             }
 
             //Update Serial Number of account_balance Table
@@ -82,7 +82,7 @@ class AccountDelete extends UI {
             connection.close();
 
         }catch(Exception e){
-            e.getMessage();
+            e.printStackTrace();
         }
     }
 }
