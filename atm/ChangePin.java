@@ -100,6 +100,22 @@ public class ChangePin extends UI {
                 query=String.format("UPDATE atm_details SET m_pin='%s' WHERE atm_number='%s'",mpin1,atmNumber);
                 int rowAffected=statement.executeUpdate(query);
                 if(rowAffected>0){
+
+                    // Add a delay of 3 second
+                    System.out.print("\nChanging M-Pin");
+                    for(int i=0;i<4; i++){
+                        try{
+                            Thread.sleep(1000);
+                        }catch(Exception e){
+                            System.out.println(e.getMessage());
+                        }
+                        if(i==3) {
+                            System.out.print("\n");
+                            break;
+                        }
+                        else System.out.print(".");
+                    }
+
                     System.out.println("M-PIN Change Successfully!");
                     System.out.println("New M-PIN                : "+mpin1);
                     connection.close();
