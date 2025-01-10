@@ -25,7 +25,7 @@ public class Account extends UI {
                     "acc_number VARCHAR(15) UNIQUE,"+
                     "ifsc_code VARCHAR(11) DEFAULT 'PRSH0009851',"+
                     "bank_name VARCHAR(12) DEFAULT 'NITIYA BANK',"+
-                    "freeze_details VARCHAR(3) DEFAULT 'no',"+
+                    "freeze_info VARCHAR(3) DEFAULT 'no',"+
                     "date_time VARCHAR(20))";
 
             statement.executeUpdate(query);
