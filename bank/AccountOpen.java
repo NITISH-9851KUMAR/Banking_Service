@@ -135,7 +135,7 @@ public class AccountOpen extends UI {
             //Create a table of Transaction Details
             new CreateTransaction(prnNumber,fName,bal,date,"BANK");
 
-            //Update serial Number in account_details Table
+            //Update serial Number in function class
             new UpdateSerialNo("account_details"); //call for update serial Number
 
         }catch(Exception e){
