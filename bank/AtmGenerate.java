@@ -29,6 +29,7 @@ public class AtmGenerate extends UI {
                 accNumberLength=accNumber.length();
             }
 
+
             //Check account number is valid ,show in our database
             query=String.format("SELECT acc_number FROM account_details WHERE acc_number='%S'",accNumber);
             resultSet=statement.executeQuery(query);
@@ -81,6 +82,22 @@ public class AtmGenerate extends UI {
                     //if mobile number is exist on the given account number then generate atm number
                     if (resultSet.getString("mob_number").equals(mobileNumber)) {
 
+                        // Add a delay of 3 second
+                        System.out.print("Applying for ATM card");
+                        for(int i=0;i<4; i++){
+                            try{
+                                Thread.sleep(1000);
+                            }catch(Exception e){
+                                System.out.println(e.getMessage());
+                            }
+                            if(i==3) {
+                                System.out.print("\n\n");
+                                break;
+                            }
+                            else
+                                System.out.print(".");
+                        }
+
                         //Take value of date through function
                         String date = Date.date();
 
@@ -90,9 +107,9 @@ public class AtmGenerate extends UI {
                         query = String.format("INSERT INTO atm_details(acc_number,atm_number,mob_number,m_pin,date_time) VALUES('%s','%s','%s',%d    ,'%s')", accNumber, atmNumber, mobileNumber, pin, date);
                         int rowAff = statement.executeUpdate(query);
                         if (rowAff > 0) {
-                            System.out.println("Successfully ATM Generate!!");
-
-                            //Update serial Number in atm_details Table
+                            System.out.println("Congratulations! Your ATM card application has been successfully Applied.!!");
+                            System.out.println("Thank you for banking with Nitiya Bank. ");
+                            //Update serial Number in function Table
                             new UpdateSerialNo("atm_details"); //call for update serial Number
                         }
                     }
