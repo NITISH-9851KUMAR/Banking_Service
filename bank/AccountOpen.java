@@ -50,7 +50,7 @@ public class AccountOpen extends UI {
             int prnLength=prnNumber.length();
             while(prnLength!=12){ //check length is equal to 12
                 System.out.println("Please Enter Valid PRN Number \n");
-                System.out.print("Re-Enter Aadhaar Number: ");
+                System.out.print("Re-Enter PRN Number       : ");
                 prnNumber=sc.next();
                 prnLength=prnNumber.length();
             }
@@ -139,7 +139,7 @@ public class AccountOpen extends UI {
             new UpdateSerialNo("account_details"); //call for update serial Number
 
         }catch(Exception e){
-            e.getMessage();
+            e.printStackTrace();
         }
     }
 }
