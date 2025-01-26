@@ -28,7 +28,7 @@ public class Transaction extends UI {
                     ")";
             statement.executeUpdate(query);
         }catch(Exception e){
-            e.getMessage();
+            e.printStackTrace();
         }
     }
 }
