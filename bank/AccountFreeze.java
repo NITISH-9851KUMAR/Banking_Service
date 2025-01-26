@@ -58,6 +58,8 @@ class AccountFreeze extends UI {
                 }
             }
             connection.close();
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

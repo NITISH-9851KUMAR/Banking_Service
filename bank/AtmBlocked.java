@@ -124,6 +124,8 @@ public class AtmBlocked extends UI {
                         System.out.println("Atm is Successfully Blocked!");
                     }
                     connection.close();
-            }catch(Exception e){}
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
 }

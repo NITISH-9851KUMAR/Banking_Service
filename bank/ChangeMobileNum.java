@@ -102,7 +102,7 @@ class ChangeMobileNum extends UI {
             else System.out.println("Mobile Number Not Changed!!");
             connection.close();
         } catch (Exception e) {
-            e.getMessage();
+            e.printStackTrace();
         }
     }
 }

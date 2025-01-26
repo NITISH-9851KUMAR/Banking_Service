@@ -44,6 +44,8 @@ public class Debit extends UI {
             query=String.format("INSERT INTO %s(date_time,details,debit,balance,fine_charge) VALUES('%s','%s',%f,%f,%f)",tableName,date,details,debit,totalBal,fineCharge);
             statement.executeUpdate(query);
             connection.close();
-        }catch (Exception e){}
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

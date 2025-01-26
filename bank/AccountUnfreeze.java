@@ -59,6 +59,8 @@ class AccountUnfreeze extends UI {
                     System.out.println("Account is successfully Unfreeze!");
                 }
             }
-        }catch(Exception e){}
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

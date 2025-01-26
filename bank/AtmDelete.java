@@ -99,7 +99,7 @@ class AtmDelete extends UI {
                 connection.close();
 
             } catch (Exception e) {
-                e.getMessage();
+                e.printStackTrace();
             }
     }
 }

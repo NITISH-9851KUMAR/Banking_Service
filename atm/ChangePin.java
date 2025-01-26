@@ -125,6 +125,8 @@ public class ChangePin extends UI {
                 System.out.println("OLD M-PIN is Not Matched!!");
                 System.out.println("Try Again!!");
             }
-        }catch(Exception e){}
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -41,6 +41,7 @@ public class DeleteTransaction extends UI {
             connection.close();
 
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

@@ -101,7 +101,7 @@ public class BalanceWithdraw extends UI {
             }
             connection.close();
         }catch (Exception e) {
-            e.getMessage();
+            e.printStackTrace();
         }
     }//withdraw function is terminated there
 }//Main class is terminate there

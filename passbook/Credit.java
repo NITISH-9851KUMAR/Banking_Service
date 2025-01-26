@@ -44,6 +44,8 @@ public class Credit extends UI {
             query=String.format("INSERT INTO %s(date_time,details,credit,balance,fine_charge) VALUES('%s','%s',%f,%f,%f)",tableName,date,details,creditBal,totalBal,fineCharge);
             statement.executeUpdate(query);
             connection.close();
-        }catch(Exception e){e.getMessage();}
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }

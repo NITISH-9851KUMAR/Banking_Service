@@ -118,7 +118,9 @@ public class BalanceWithdraw extends UI {
                 System.out.println("\nAvailable Balance is not sufficient !!");
                 System.out.println("Transaction Status: Failure");
             }
-        }catch(Exception e){}
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
 }

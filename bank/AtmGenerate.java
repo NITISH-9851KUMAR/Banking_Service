@@ -118,7 +118,7 @@ public class AtmGenerate extends UI {
                 }
                 connection.close();
         }catch(Exception e){
-            e.getMessage();
+            e.printStackTrace();
         }
     }
 }

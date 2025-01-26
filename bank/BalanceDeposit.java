@@ -106,7 +106,7 @@ class BalanceDeposit extends UI {
                 System.out.println("Transaction Status: Failure");
             }
         } catch (Exception e) {
-            e.getMessage();
+            e.printStackTrace();
         }
     }//Deposit balance is terminated there
 }//Main class is terminated there

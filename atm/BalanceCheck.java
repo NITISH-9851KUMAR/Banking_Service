@@ -113,6 +113,8 @@ public class BalanceCheck extends UI {
                 System.out.println("Available Balance  : "+balance+"₹");
             }
             connection.close();
-        }catch(Exception e){}
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -100,7 +100,7 @@ public class PrintTransaction extends UI {
             System.out.println("\n\n");
             connection.close();
         }catch(Exception e){
-            e.getMessage();
+            e.printStackTrace();
         }
     }
 }

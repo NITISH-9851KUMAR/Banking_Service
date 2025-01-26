@@ -120,6 +120,8 @@ public class AtmUnblocked extends UI {
                 System.out.println("Atm is Successfully Un Blocked!");
             }
             connection.close();
-        }catch(Exception e){}
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

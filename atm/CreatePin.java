@@ -144,7 +144,7 @@ public class CreatePin extends UI {
                 System.out.println("User Press Pin is Not Matched!");
             }
         }catch(Exception e){
-            e.getMessage();
+            e.printStackTrace();
         }
     }
 }
